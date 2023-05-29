@@ -1,0 +1,4 @@
+//- use svg icon from svg-sprite
+mixin svg-icon(image)
+  svg(class=attributes.class)
+    use(xlink:href='@img/icons/icons.svg#'.concat(image) class='icon__'.concat(image))

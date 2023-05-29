@@ -1,0 +1,74 @@
+@import ./vars
+
+*
+ margin: 0
+ padding: 0
+ border: 0
+
+*,
+*:before,
+*:after
+ box-sizing: border-box
+
+html,
+body
+ font-family: $fontMain
+ font-size: 10px
+ line-height: 1.6
+ scroll-behavior: smooth
+
+body
+ min-height: 100vh
+ font-size: 1.4rem
+
+ &.locked
+  overflow: hidden
+
+aside,
+nav,
+header,
+footer,
+section
+ display: block
+
+a,
+a:visited,
+a:hover
+ text-decoration: none
+
+ul li
+ list-style: none
+
+/// Container
+.container
+ max-width: $containerWidth + px
+ width: 100%
+ margin: 0 auto
+ padding: 0 ($containerSidePadding + px)
+
+.btn
+ margin-top: 1em
+ padding: 0.5em 1.5em
+ display: inline-block
+ border-radius: 50px
+ outline: none
+ text-transform: uppercase
+ font-weight: small
+
+ &-primary
+  color: #f0f0f0
+  background: #16a083
+
+  &:hover
+   background: #117964
+   transition: 0.3s background ease-in-out
+
+.hidden
+ display: none
+
+@keyframes fade
+ 0%
+  opacity: 0
+
+ 100%
+  opacity: 1

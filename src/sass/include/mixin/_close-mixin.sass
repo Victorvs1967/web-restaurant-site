@@ -1,0 +1,32 @@
+@mixin close($color, $size, $top: 1rem, $right: 1rem)
+  $line-thin: calc($size / 10)
+  .close-control
+    width: $size
+    height: $size
+    display: block
+    position: absolute
+    top: $top
+    right: $right
+    background-color: transparent
+    border: none
+    cursor: pointer
+    z-index: 999
+    &__item
+      position: relative
+      display: block
+      &::before,
+      &::after
+        content: ''
+        width: 100%
+        position: absolute
+        top: 50%
+        left: 0
+        height: $line-thin
+        background-color: $color
+        border-radius: 1rem
+        transition: .4s transform
+        -webkit-transition: .4s transform
+      &::before
+        transform: rotate(45deg)
+      &::after
+        transform: rotate(-45deg)

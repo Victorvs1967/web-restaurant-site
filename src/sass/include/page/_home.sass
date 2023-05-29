@@ -1,0 +1,281 @@
+@import ../vars
+
+.showcase
+  &-area
+    height: 50vh
+    background-image: linear-gradient(rgba(240, 240, 240, 0.144), rgba(255, 255, 255, 0.536)), url("@img/header-image2.jpg")
+    background-size: cover
+    background-position: top
+    background-repeat: no-repeat
+  &-container
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    font-size: 1.6rem
+    .main-title
+      margin-top: 3em
+      font-size: 3.2rem
+      text-transform: uppercase
+
+#about
+ padding: 50px 0
+ background: #f5f7f7
+
+ h2
+  font-size: 2.8rem
+
+ p
+  font-size: 1.6rem
+  color: #555
+
+ .small
+  font-size: 1.6rem
+  font-weight: 600
+  color: #666
+
+ .about
+  &-wrapper
+   display: flex
+   flex-wrap: wrap
+
+  &-img
+   padding: 30px
+   flex: 1 1 400px
+   transform: translateX(150%)
+   animation: about-img-animation 1s ease-in-out forwards
+
+   img
+    max-width: 100%
+    height: 400px
+    margin: auto
+    display: block
+    object-fit: cover
+    object-position: right
+
+  &-text
+   margin: auto
+   padding: 30px
+   flex: 1 1 400px
+   transform: translate(-150%)
+   animation: about-text-animation 1s ease-in-out forwards
+
+#food
+ padding: 60px 0 10px 0
+
+ h2
+  margin-bottom: 40px
+  text-align: center
+  font-size: 3.2rem
+  font-weight: 400
+  color: #555
+
+ .food
+  &-container
+   display: flex
+   justify-content: space-between
+
+   .img-container
+    margin: 0 1rem
+    position: relative
+
+    img
+     width: 100%
+     max-height: 300px
+     margin: auto
+     display: block
+     object-fit: cover
+     object-position: center
+
+    &::after
+     content: ""
+     display: block
+     position: absolute
+     top: 0
+     left: 0
+     width: 100%
+     height: 100%
+     background: rgba(0, 0, 0, 0.6)
+     opacity: 0
+     z-index: 1
+
+    &:hover
+     &:after
+      opacity: 1
+      transform: scaleY(1)
+
+     .img-content
+      opacity: 1
+      top: 40%
+
+   .img-content
+    position: absolute
+    top: 70%
+    left: 50%
+    transform: translate(-50%, -50%)
+    opacity: 0
+    z-index: 2
+    text-align: center
+    transition: all 0.4s ease-in-out 0.1s
+
+    h3
+     font-size: 2.8rem
+     color: #fff
+
+    a
+     font-size: 1.6rem
+
+.food-menu
+ padding: 60px 0 10px 0
+
+ &-heading
+  padding-bottom: 2rem
+  text-align: center
+  font-size: 3.2rem
+  font-weight: 400
+  color: #666
+
+ &-container
+  display: flex
+  flex-wrap: wrap
+
+  img
+   width: 250px
+   height: 250px
+   display: block
+   border-radius: 50%
+   object-fit: cover
+   object-position: center
+
+ &-item
+  margin-bottom: 3rem
+  display: flex
+  justify-content: space-evenly
+  flex: 1 1 500px
+
+ &-description
+  margin: auto 1.5rem
+
+  p
+   font-size: 1.6rem
+   line-height: 1.4
+   font-weight: 500
+   color: #555
+
+  .food-menu-price
+   padding-top: 1rem
+   font-weight: 700
+   color: #117964
+
+ &-title
+  padding-bottom: 1rem
+  font-size: 2.2rem
+  font-weight: 400
+  color: #444
+
+.testimonial
+ padding: 60px 0 10px 0
+ background: #f5f7f7
+
+ &-title
+  padding-bottom: 2rem
+  text-align: center
+  font-size: 3.2rem
+  font-weight: 400
+  color: #555
+
+ &-container
+  padding: 1rem
+  display: flex
+  justify-content: space-between
+  font-size: 1.4rem
+  line-height: 1.4
+
+ &-box
+  text-align: center
+  padding: 1rem
+
+ &-text
+  margin: 1rem 0
+  color:#444
+
+ .checked
+  color: #ff9529
+
+ .customer-photo
+  img
+   width: 150px
+   height: 150px
+   margin: auto
+   margin-bottom: 0.5rem
+   display: block
+   object-fit: cover
+   object-position: center
+   border-radius: 50%
+
+.contact
+ padding: 5rem 0
+ background: rgb(226, 226, 226)
+
+ &-container
+  display: flex
+  background: #fff
+
+ &-img
+  width: 50%
+
+  img
+   width: 100%
+   height: 400px
+   display: block
+   object-fit: cover
+   object-position: center
+
+ &-form
+  width: 50%
+  margin: auto
+  padding: 2rem
+
+  *::placeholder
+   font-size: 1.4rem
+
+  input
+   width: 100%
+   margin-bottom: 1rem
+   padding: 1rem 0
+   display: block
+   border: none
+   border-bottom: 2px solid #ddd
+   box-shadow: none
+   outline: none
+   font-weight: 500
+   color: #444
+
+  textarea
+   width: 100%
+   padding: 1rem 0
+   display: block
+   border: none
+   border-bottom: 2px solid #ddd
+   outline: none
+   resize: none
+   color: #444
+
+  h2
+   margin-bottom: 1rem
+   margin-top: -1.2rem
+   font-size: 3rem
+   font-weight: 500
+   color: #444
+
+  a
+   font-size: 1.6rem
+
+@keyframes about-img-animation
+ 100%
+  transform: translate(0)
+
+@keyframes about-text-animation
+ 100%
+  transform: translate(0)

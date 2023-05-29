@@ -1,0 +1,67 @@
+main.main
+  section.showcase-area#showcase
+    .showcase-container.container
+      h1.main-title#home Eat Right Food
+      p Eat Healty, it is good for our health.
+      a.btn.btn-primary(href="#food-menu") Menu
+
+  section#about
+    .about-wrapper.container
+      .about-text
+        p.small About Us
+        h2 We've been<br/>making healthy food<br/>last for 10 years.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure tempore libero vitae aspernatur sint fugit voluptatibus quo, alias quasi vel rerum assumenda non architecto. Commodi assumenda iste accusantium eveniet quos.
+      .about-img
+        img(src="@img/about-photo.jpg", alt="food")
+
+  section#food
+    h2.food-title Types of Food
+    .food-container.container
+      each type in types
+        .food-type(class= type.content)
+          .img-container
+            img(src= type.image, alt="error")
+            .img-content
+              h3= type.content
+              a(href= type.link target='_blank' class="btn btn-primary") learn more
+
+  section#food-menu.food-menu
+    h2.food-menu-heading Food Menu
+    .food-menu-container.container
+      each item in items
+        .food-menu-item
+          .food-menu-img
+            img(src= item.image, alt="error")
+          .food-menu-description
+            h2.food-menu-title= item.title
+            p= item.desc
+            p.food-menu-price Price: &#8377; #[= item.price]
+
+  section#testimonials.testimonial
+    h2.testimonial-title What Our Customers Say
+    .testimonial-container.container
+      each customer in customers
+        .testimonial-box
+          .customer-detail
+            .customer-photo
+              img(src= customer.image, alt="photo")
+              p.customer-name= customer.name
+          .star-rating
+            span.fa.fa-star.checked
+            span.fa.fa-star.checked
+            span.fa.fa-star.checked
+            span.fa.fa-star.checked
+            span.fa.fa-star.checked
+          p.testimonial-text= customer.text
+
+  section#contact.contact
+    .container
+      .contact-container
+        .contact-img
+          img(src="@img/restraunt2.jpg", alt="restoran")
+        .contact-form
+          h2 Contact Us
+          input(type="text", placeholder="Your Name")
+          input(type="email", placeholder="E-Mail")
+          textarea(name="", cols="30", rows="6", placeholder="Type Your Message")
+          a(href="#!").btn.btn-primary Submit

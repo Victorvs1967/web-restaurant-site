@@ -1,0 +1,53 @@
+@mixin burger($color, $size, $top: 3rem, $right: 2rem)
+  $line-thin: calc($size / 10)
+  .burger-menu
+    &__control
+      width: $size
+      height: $size
+      display: block
+      position: absolute
+      top: $top
+      right: $right
+      background-color: transparent
+      border: none
+      cursor: pointer
+      z-index: 999
+      .burger__item
+        position: relative
+        display: block
+        width: 100%
+        height: $line-thin
+        background-color: $color
+        border-radius: 1rem
+        &::before,
+        &::after
+          content: ''
+          position: absolute
+          left: 0
+          width: 100%
+          height: $line-thin
+          background-color: $color
+          border-radius: 1rem
+        &::before
+          bottom: calc($size / 2 - 4px)
+        &::after
+          top: calc($size / 2 - 4px)
+      .close__item
+        position: relative
+        display: none
+        &::before,
+        &::after
+          content: ''
+          width: 100%
+          position: absolute
+          top: 50%
+          left: 0
+          height: $line-thin
+          background-color: $color
+          border-radius: 1rem
+          transition: .4s transform
+          -webkit-transition: .4s transform
+        &::before
+          transform: rotate(45deg)
+        &::after
+          transform: rotate(-45deg)
